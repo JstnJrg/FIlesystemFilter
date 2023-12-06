@@ -12,13 +12,16 @@ In large projects with many assets, it is sometimes difficult to find a specific
 
 # You can
 
+... Filter asset search in project (e.g. *.png, *.ogg,*.wav)
+... either in the root folder or in other
+
 ## Files
-...* Rename files
-...* Delete files
-...* Drag and drop into the main viewport.
+... **Rename files**
+... **Delete files**
+... **Drag and drop into the main viewport.**
 
 ##Folders
-...* Change the color
-...* Copy the path
+... **Change the color**
+... ***Copy the path**
 
 
