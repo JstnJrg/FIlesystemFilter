@@ -20,7 +20,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Meus Plugins Gerais"
+config/name="FIlesystemFilter"
 config/icon="res://icon.png"
 
 [display]
