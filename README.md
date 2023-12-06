@@ -25,4 +25,6 @@ In large projects with many assets, it is sometimes difficult to find a specific
 * **Copy the path**
 
 ![](https://raw.githubusercontent.com/JstnJrg/FIlesystemFilter/main/Filter.gif = 100x100)
+<img src = "https://raw.githubusercontent.com/JstnJrg/FIlesystemFilter/main/Filter.gif" width ="200" height="250"/>
+
 
