@@ -6,9 +6,9 @@ In large projects with many assets, it is sometimes difficult to find a specific
 
 
 # This is the reason for the plugin.
-...In large projects with many assets, it is sometimes difficult to find a specific ...asset, which makes the workflow difficult by having to search directory by directory.
+* In large projects with many assets, it is sometimes difficult to find a specific ...asset, which makes the workflow difficult by having to search directory by directory.
 
-...This is the reason for the plugin.
+* This is the reason for the plugin.
 
 # You can
 
@@ -22,6 +22,6 @@ In large projects with many assets, it is sometimes difficult to find a specific
 
 ## Folders
 * **Change the color**
-* ***Copy the path**
+* **Copy the path**
 
 
