@@ -24,5 +24,5 @@ In large projects with many assets, it is sometimes difficult to find a specific
 * **Change the color**
 * **Copy the path**
 
-[](https://raw.githubusercontent.com/JstnJrg/FIlesystemFilter/main/Filter.gif)
+![](https://raw.githubusercontent.com/JstnJrg/FIlesystemFilter/main/Filter.gif)
 
