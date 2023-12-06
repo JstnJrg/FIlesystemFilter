@@ -17,11 +17,11 @@ In large projects with many assets, it is sometimes difficult to find a specific
 
 ## Files
 * **Rename files**
-... **Delete files**
-... **Drag and drop into the main viewport.**
+* **Delete files**
+* **Drag and drop into the main viewport.**
 
 ## Folders
-... **Change the color**
-... ***Copy the path**
+* **Change the color**
+* ***Copy the path**
 
 
