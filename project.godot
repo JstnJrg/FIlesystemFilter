@@ -30,7 +30,7 @@ window/size/height=480
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/FilterManeger/plugin.cfg" )
+disabled=PoolStringArray( "res://addons/FilterManeger/plugin.cfg" )
 
 [gui]
 
