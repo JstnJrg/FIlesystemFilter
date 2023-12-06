@@ -1,0 +1,199 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://addons/FilterManeger/scripts/Tree.gd" type="Script" id=1]
+[ext_resource path="res://addons/FilterManeger/icons/Search.png" type="Texture" id=2]
+[ext_resource path="res://addons/FilterManeger/icons/Rename.png" type="Texture" id=3]
+[ext_resource path="res://addons/FilterManeger/icons/Remove.png" type="Texture" id=4]
+[ext_resource path="res://addons/FilterManeger/scripts/DirsTree.gd" type="Script" id=5]
+[ext_resource path="res://addons/FilterManeger/icons/ColorPick.png" type="Texture" id=6]
+[ext_resource path="res://addons/FilterManeger/icons/ActionCopy.png" type="Texture" id=7]
+[ext_resource path="res://addons/FilterManeger/scripts/DirOptions.gd" type="Script" id=8]
+[ext_resource path="res://addons/FilterManeger/scripts/DirColorPicker.gd" type="Script" id=9]
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.12549, 0.137255, 0.168627, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_blend = true
+
+[node name="FIlesystemFilterPlugin" type="VBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -402.0
+margin_bottom = -83.0
+mouse_filter = 2
+
+[node name="Timer_update_all" type="Timer" parent="."]
+wait_time = 0.6
+one_shot = true
+
+[node name="Timer_initial_update" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="PopUP" type="CanvasLayer" parent="."]
+
+[node name="Popup" type="PopupMenu" parent="PopUP"]
+margin_left = -304.0
+margin_top = 56.0
+margin_right = -206.0
+margin_bottom = 130.0
+custom_styles/panel = SubResource( 3 )
+items = [ "", null, 0, false, false, 0, 0, null, "", true, "  Delete", ExtResource( 4 ), 0, false, false, 1, 0, null, "", false, "  Rename", ExtResource( 3 ), 0, false, false, 2, 0, null, "", false, "", null, 0, false, false, 3, 0, null, "", true ]
+
+[node name="rename" type="WindowDialog" parent="PopUP"]
+margin_left = -244.0
+margin_top = 39.0
+margin_right = -65.0
+margin_bottom = 88.0
+window_title = "Rename"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopUP/rename"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="next_name" type="LineEdit" parent="PopUP/rename/VBoxContainer"]
+margin_right = 179.0
+margin_bottom = 24.0
+
+[node name="buttos" type="HBoxContainer" parent="PopUP/rename/VBoxContainer"]
+margin_top = 28.0
+margin_right = 179.0
+margin_bottom = 49.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button_rename" type="Button" parent="PopUP/rename/VBoxContainer/buttos"]
+margin_right = 87.0
+margin_bottom = 21.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Rename"
+
+[node name="Button_cancel" type="Button" parent="PopUP/rename/VBoxContainer/buttos"]
+margin_left = 91.0
+margin_right = 179.0
+margin_bottom = 21.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Cancel"
+
+[node name="DirOptions" type="PopupMenu" parent="PopUP"]
+visible = true
+margin_left = -242.0
+margin_top = 162.0
+margin_right = -97.0
+margin_bottom = 254.0
+items = [ "", null, 0, false, false, 0, 0, null, "", true, "  Change Color", ExtResource( 6 ), 0, false, false, 1, 0, null, "", false, "  Copy Path", ExtResource( 7 ), 0, false, false, 2, 0, null, "", false, "", null, 0, false, true, 3, 0, null, "", true ]
+script = ExtResource( 8 )
+
+[node name="DirColorPicker" type="ColorPicker" parent="PopUP"]
+visible = false
+margin_left = -160.0
+margin_top = -31.0
+margin_right = 151.0
+margin_bottom = 431.0
+alignment = 1
+raw_mode = true
+script = ExtResource( 9 )
+
+[node name="tree_container" type="VBoxContainer" parent="."]
+margin_right = 238.0
+margin_bottom = 196.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="OptionButton" type="OptionButton" parent="tree_container"]
+margin_right = 238.0
+margin_bottom = 20.0
+text = "png"
+icon = ExtResource( 2 )
+items = [ "png", ExtResource( 2 ), false, 0, null, "gd", ExtResource( 2 ), false, 1, null ]
+selected = 0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="tree_container"]
+margin_top = 24.0
+margin_right = 238.0
+margin_bottom = 196.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Tree" type="Tree" parent="tree_container/ScrollContainer"]
+margin_right = 238.0
+margin_bottom = 172.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+allow_reselect = true
+allow_rmb_select = true
+drop_mode_flags = 1
+script = ExtResource( 1 )
+
+[node name="editor_container" type="VBoxContainer" parent="."]
+margin_top = 200.0
+margin_right = 238.0
+margin_bottom = 397.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="LineEdit" type="LineEdit" parent="editor_container"]
+margin_right = 238.0
+margin_bottom = 24.0
+right_icon = ExtResource( 2 )
+placeholder_text = "extension to search e.g: *.png"
+placeholder_alpha = 0.563
+
+[node name="Panel" type="Panel" parent="editor_container"]
+margin_top = 28.0
+margin_right = 238.0
+margin_bottom = 197.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="editor_container/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="title" type="Label" parent="editor_container/Panel/VBoxContainer"]
+margin_right = 238.0
+margin_bottom = 14.0
+text = "Directories"
+align = 1
+valign = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="editor_container/Panel/VBoxContainer"]
+margin_top = 18.0
+margin_right = 238.0
+margin_bottom = 169.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="DirsTree" type="Tree" parent="editor_container/Panel/VBoxContainer/ScrollContainer"]
+margin_right = 238.0
+margin_bottom = 151.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+allow_reselect = true
+allow_rmb_select = true
+script = ExtResource( 5 )
+
+[connection signal="timeout" from="Timer_update_all" to="tree_container/ScrollContainer/Tree" method="timer_update_all_timeout"]
+[connection signal="timeout" from="Timer_initial_update" to="editor_container/Panel/VBoxContainer/ScrollContainer/DirsTree" method="Timer_initial_update_timeout"]
+[connection signal="index_pressed" from="PopUP/Popup" to="tree_container/ScrollContainer/Tree" method="popup_index_pressed"]
+[connection signal="pressed" from="PopUP/rename/VBoxContainer/buttos/Button_rename" to="tree_container/ScrollContainer/Tree" method="rename_request_pressed"]
+[connection signal="pressed" from="PopUP/rename/VBoxContainer/buttos/Button_cancel" to="tree_container/ScrollContainer/Tree" method="button_cancel_pressed"]
+[connection signal="focus_exited" from="PopUP/DirOptions" to="PopUP/DirOptions" method="DirOptions_focus_exited"]
+[connection signal="index_pressed" from="PopUP/DirOptions" to="editor_container/Panel/VBoxContainer/ScrollContainer/DirsTree" method="DirOptions_index_pressed"]
+[connection signal="color_changed" from="PopUP/DirColorPicker" to="editor_container/Panel/VBoxContainer/ScrollContainer/DirsTree" method="DirColorPicker_color_changed"]
+[connection signal="item_selected" from="tree_container/OptionButton" to="tree_container/ScrollContainer/Tree" method="item_selected"]
+[connection signal="item_rmb_selected" from="tree_container/ScrollContainer/Tree" to="tree_container/ScrollContainer/Tree" method="item_rmb_selected"]
+[connection signal="item_selected" from="tree_container/ScrollContainer/Tree" to="tree_container/ScrollContainer/Tree" method="tree_item_selected"]
+[connection signal="text_entered" from="editor_container/LineEdit" to="tree_container/ScrollContainer/Tree" method="text_entered"]
+[connection signal="item_rmb_selected" from="editor_container/Panel/VBoxContainer/ScrollContainer/DirsTree" to="editor_container/Panel/VBoxContainer/ScrollContainer/DirsTree" method="DirsTree_item_rmb_selected"]
+[connection signal="item_selected" from="editor_container/Panel/VBoxContainer/ScrollContainer/DirsTree" to="editor_container/Panel/VBoxContainer/ScrollContainer/DirsTree" method="DirsTree_item_selected"]
