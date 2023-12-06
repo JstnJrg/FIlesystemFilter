@@ -1,5 +1,5 @@
 # FIlesystemFilter
-## [The plugin](https://github.com/JstnJrg/FIlesystemFilter/tree/main) that allows you to speed up the workflow facilitating assets searches.
+[The plugin](https://github.com/JstnJrg/FIlesystemFilter/archive/refs/heads/main.zip) that allows you to speed up the workflow facilitating assets searches.
 
 # The reason for this
 In large projects with many assets, it is sometimes difficult to find a specific asset, which makes the workflow difficult by having to search directory by directory.
