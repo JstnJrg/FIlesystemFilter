@@ -12,8 +12,8 @@ In large projects with many assets, it is sometimes difficult to find a specific
 
 # You can
 
-... Filter asset search in project (e.g. *.png, *.ogg,*.wav)
-... either in the root folder or in other
+* Filter asset search in project (e.g. *.png, *.ogg,*.wav)
+* either in the root folder or in other
 
 ## Files
 * **Rename files**
