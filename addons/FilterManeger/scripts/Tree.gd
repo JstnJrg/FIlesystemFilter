@@ -139,7 +139,7 @@ func treeitem_options(filepath: String,option_indx: int,nome := ""):
 		
 		match option_indx:
 			1: #Rename
-				var new_name := filepath.get_base_dir()+"/"+nome+"."+filepath.get_extension()
+				var new_name := filepath.get_base_dir()+"/"+nome
 				var error2 := directory.rename(filepath,new_name)
 				
 				rename_popup_node.hide()
